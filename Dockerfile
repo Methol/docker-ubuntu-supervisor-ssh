@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 
 MAINTAINER Methol <methol@tuzhihao.com>
 
-COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN apt-get update -y && \
     apt-get install -y supervisor && \
@@ -10,4 +10,4 @@ RUN apt-get update -y && \
     apt-get install -y cron && \
     apt-get autoclean && apt-get autoremove
 
-CMD ["/usr/bin/supervisord", "-d"]
+CMD ["supervisord -n -c /etc/supervisor/supervisord.conf"]
