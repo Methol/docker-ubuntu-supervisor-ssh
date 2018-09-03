@@ -9,7 +9,7 @@ RUN apt-get update -y && \
     apt-get autoclean && apt-get autoremove
 
 
-COPY supervisord.conf /etc/supervisor/supervisord.conf
+COPY start.sh /start.sh
 
 
-CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+ENTRYPOINT ["/bin/bash", "/start.sh"]
