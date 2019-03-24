@@ -1,12 +1,9 @@
 FROM ubuntu
 
-MAINTAINER Methol <methol@tuzhihao.com>
-
 RUN apt-get update -y && \
     apt-get install -y supervisor && \
     apt-get install -y openssh-server && \
     apt-get install -y tzdata && \
-    apt-get install -y cron && \
     apt-get install -y vim && \
     apt-get autoclean && apt-get autoremove && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
