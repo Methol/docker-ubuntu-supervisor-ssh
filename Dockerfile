@@ -1,10 +1,7 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
 RUN apt-get update -y && \
-    apt-get install -y supervisor && \
-    apt-get install -y openssh-server && \
-    apt-get install -y tzdata && \
-    apt-get install -y vim && \
+    apt-get install -y supervisor openssh-server tzdata vim&& \
     apt-get autoclean && apt-get autoremove && \
     ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     echo "Asia/Shanghai" > /etc/timezone
